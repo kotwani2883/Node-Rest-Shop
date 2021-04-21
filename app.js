@@ -8,6 +8,7 @@ const productRoutes=require('./api/routes/products')
 const orderRoutes=require('./api/routes/orders')
 mongoose.connect('mongodb+srv://pk22:' + process.env.MONGO_ATLAS_PW +'@noderestshop.k4ioz.mongodb.net/NODE-REST-SHOP?retryWrites=true&w=majority',{useNewUrlParser: true})
 
+mongoose.Promise=global.Promise;
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
