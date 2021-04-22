@@ -10,6 +10,7 @@ mongoose.connect('mongodb+srv://pk22:' + process.env.MONGO_ATLAS_PW +'@noderests
 
 mongoose.Promise=global.Promise;
 app.use(morgan('dev'));
+app.use('/uploads',express.static('uploads'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use((req,res,next)=>{
